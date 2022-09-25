@@ -1,6 +1,11 @@
+import Form from "./Form";
+
 function Home(){
     return(
-        <h1>Home</h1>
+        <div>
+            <h1>Home</h1>
+            <Form/>
+        </div>
     )
 }
 
