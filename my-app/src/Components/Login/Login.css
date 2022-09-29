@@ -1,0 +1,15 @@
+.maincontent{
+    text-align: center;
+}
+
+.register{
+    display: inline-block;
+    text-align: center;
+    padding: 5%;
+    margin-right: 10%;
+}
+
+.login{
+   display: inline-block;
+   text-align: center;
+}

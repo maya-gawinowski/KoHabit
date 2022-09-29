@@ -1,6 +1,6 @@
 function Footer(){
     return(
-        <h1>
+        <h1 className="header">
             Footer
         </h1>
     )
