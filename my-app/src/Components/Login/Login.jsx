@@ -48,10 +48,11 @@ export default function Login() {
     setValue(newValue);
   };
 
-  /*const handleSubmit = () => {
-    alert('A name was submitted: ' + this.state.value);
+  function handleSubmit () {
+    console.log("hello");
+    //alert('A name was submitted: ' + this.state.value);
     //event.preventDefault();
-  }*/
+  }
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -63,7 +64,7 @@ export default function Login() {
       </Box>
       <TabPanel value={value} index={0} style={{textAlign: 'center'}}>
         <Typography variant='h3'>Connexion</Typography>
-        <form>
+        <div class='form'>
             <label>
                 Nom <br />
                 <input type="text" name="name" />
@@ -80,22 +81,27 @@ export default function Login() {
                 Confirmer mot de passe <br />
                 <input type="text" name="name" />
             </label><br />
-            <input type="submit" value="Valider" />
-        </form>
+            <button class="button_form" onClick={handleSubmit}>
+                Voter
+            </button>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1} style={{textAlign: 'center'}}>
         <Typography variant='h3'>Inscription</Typography>
-        <form onSubmit={handleSubmit()}>
-                <label>
-                    Email <br />
-                    <input type="text" name="name" />
-                </label><br />
-                <label>
-                    Mot de passe <br />
-                    <input type="text" name="name" />
-                </label><br />
-                <input type="submit" value="Valider" />
-            </form>
+        <div class='form'>
+            <label>
+                Email <br />
+                <input type="text" name="name" />
+            </label><br />
+            <label>
+                Mot de passe <br />
+                <input type="text" name="name" />
+            </label><br />
+            <button class="button_form" onClick={handleSubmit}>
+                Voter
+            </button>
+        </div>
+
         </TabPanel>
     </Box>
   );
