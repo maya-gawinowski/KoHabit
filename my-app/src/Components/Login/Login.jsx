@@ -82,7 +82,7 @@ export default function Login() {
                 <input type="text" name="name" />
             </label><br />
             <button class="button_form" onClick={handleSubmit}>
-                Voter
+                Valider
             </button>
         </div>
       </TabPanel>
@@ -98,7 +98,7 @@ export default function Login() {
                 <input type="text" name="name" />
             </label><br />
             <button class="button_form" onClick={handleSubmit}>
-                Voter
+                Valider
             </button>
         </div>
 
