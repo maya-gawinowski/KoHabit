@@ -65,6 +65,7 @@ function Account() {
                 <button>Modify email</button>
                 <button>Modify Password</button>
             </Box>
+            <br /><br />
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                 <Tab label="Mes annonces" {...a11yProps(0)} />
