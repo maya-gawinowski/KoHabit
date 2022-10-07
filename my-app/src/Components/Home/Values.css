@@ -1,0 +1,27 @@
+.container_values{
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    margin: 5em auto;
+}
+
+.values_img{
+    width: 20vw;
+    height: auto;
+    margin-left: 5em;
+}
+
+.values_description{
+    margin-left : 2em;
+}
+
+.values_text{
+    margin-right: 5em;
+}
+
+.values_title{
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
