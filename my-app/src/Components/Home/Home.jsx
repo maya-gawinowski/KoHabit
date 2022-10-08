@@ -1,10 +1,16 @@
 import Form from "./Form";
+import Introduction from "./Introduction";
+import Values from "./Values";
+import fond from '../../Assets/home_background.jpg'
+import './Home.css'
 
 function Home(){
     return(
         <div>
-            <h1>Home</h1>
-            <Form/>
+            <div class="formulaire"><Form/></div>
+            <img src= {fond} alt="backroung image" class="background_img"/>
+            <Introduction/>
+            <Values/>
         </div>
     )
 }
