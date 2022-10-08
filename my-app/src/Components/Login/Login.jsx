@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { useState } from "react";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import './Login.css';
 
 
 function TabPanel(props) {
@@ -39,19 +41,29 @@ function a11yProps(index) {
   };
 }
 
-
-
 export default function Login() {
   const [value, setValue] = React.useState(0);
+  const [nameConnection, setNameConnection] = useState();
+  const [emailConnection, setEmailConnection] = useState();
+  const [pwdConnection, setPwdConnection] = useState();
+  const [pwdBisConnection, setPwdBisConnection] = useState();
+  const [emailRegister, setEmailRegister] = useState();
+  const [pwdRegister, setPwdRegister] = useState();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  function handleSubmit () {
-    console.log("hello");
-    //alert('A name was submitted: ' + this.state.value);
-    //event.preventDefault();
+  function handleSubmitConnection () {
+    console.log("Name : "+nameConnection);
+    console.log("Email : "+emailConnection);
+    console.log("Password : "+pwdConnection);
+    console.log("PasswordBis : "+pwdBisConnection);
+  }
+
+  function handleSubmitRegister () {
+    console.log("Email : "+emailRegister);
+    console.log("Password : "+pwdRegister);
   }
 
   return (
@@ -66,39 +78,39 @@ export default function Login() {
         <Typography variant='h3'>Connexion</Typography>
         <div class='form'>
             <label>
-                Nom <br />
-                <input type="text" name="name" />
+                Name <br />
+                <input type="text" name="nameConnection" onChange={(e) => setNameConnection(e.target.value)} required/>
             </label><br />
             <label>
                 Email <br />
-                <input type="text" name="name" />
+                <input type="text" name="emailConnection" onChange={(e) => setEmailConnection(e.target.value)} required/>
             </label><br />
             <label>
-                Mot de passe <br />
-                <input type="text" name="name" />
+                Password <br />
+                <input type="text" name="pwdConnection" onChange={(e) => setPwdConnection(e.target.value)} required/>
             </label><br />
             <label>
-                Confirmer mot de passe <br />
-                <input type="text" name="name" />
+                Confirm your password <br />
+                <input type="text" name="pwdBisConnection" onChange={(e) => setPwdBisConnection(e.target.value)} required/>
             </label><br />
-            <button class="button_form" onClick={handleSubmit}>
-                Valider
+            <button class="button_form" onClick={handleSubmitConnection}>
+                Validate
             </button>
         </div>
       </TabPanel>
       <TabPanel value={value} index={1} style={{textAlign: 'center'}}>
-        <Typography variant='h3'>Inscription</Typography>
+        <Typography variant='h3'>Register</Typography>
         <div class='form'>
             <label>
                 Email <br />
-                <input type="text" name="name" />
+                <input type="text" name="emailRegister" onChange={(e) => setEmailRegister(e.target.value)} required/>
             </label><br />
             <label>
-                Mot de passe <br />
-                <input type="text" name="name" />
+                Password <br />
+                <input type="text" name="pwdRegister" onChange={(e) => setPwdRegister(e.target.value)} required/>
             </label><br />
-            <button class="button_form" onClick={handleSubmit}>
-                Valider
+            <button class="button_form" onClick={handleSubmitRegister}>
+                Validate
             </button>
         </div>
 
