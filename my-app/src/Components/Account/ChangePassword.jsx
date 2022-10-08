@@ -62,6 +62,8 @@ export default function ChangePassword() {
     }
     else{
       console.log("new password : "+pwd);
+      //update password in database
+      //reload page to fetch updated data
       setOpen(false);
     }
   }

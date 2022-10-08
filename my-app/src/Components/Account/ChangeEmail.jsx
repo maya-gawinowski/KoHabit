@@ -62,6 +62,8 @@ export default function ChangeEmail() {
     }
     else{
       console.log("new email : "+email);
+      //update email in database
+      //reload page to fetch the updated data
       setOpen(false);
     }
   }
