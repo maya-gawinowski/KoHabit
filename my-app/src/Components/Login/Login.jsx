@@ -70,7 +70,9 @@ export default function Login() {
         password: pwdRegister,
         confPassword: pwdBisConnection
       });
+      console.log("suce")
       history.push("/");
+      console.log("success");
     } catch (error) {
       if (error.response) {
         console.log("error");
