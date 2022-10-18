@@ -1,8 +1,10 @@
 import './Form.css'
 
-function Form(){
+function Form({size}){
     return(
-        <div class="container_form">
+        <div class="container_form" style={{ 
+            width : size ==='small' ? '100vw' : '30vw',         
+        }}>
             <div class="form_title">
                 <h1>You are looking for :</h1>
             </div>
@@ -10,7 +12,7 @@ function Form(){
                 <button class="selection_button">Faire garder</button>
                 <button class="selection_button">Garder</button>
             </div>
-            <div class="form">
+            <div class="form" >
 
                 <br />
 

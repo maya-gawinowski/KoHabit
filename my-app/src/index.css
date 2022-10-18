@@ -47,3 +47,16 @@ code {
   margin: auto;
   
 }
+
+.footer{
+  text-align: center;
+  margin-top: 3em;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+.footer-title{
+  font-size: large;
+  font-weight: bold;
+}
