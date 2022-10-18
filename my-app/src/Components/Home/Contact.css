@@ -16,10 +16,10 @@
 }
 
 .contacts{
-    display: flex;
+    display: flex; 
     flex-direction: row;
     justify-content: space-evenly;
-    margin-bottom: 2em;
+    margin : 2em auto;
 }
 
 .direct{
@@ -31,6 +31,7 @@
 .direct_title{
     font-weight: bold;
     margin-right: 5px;
+    
 }
 
 .socials{

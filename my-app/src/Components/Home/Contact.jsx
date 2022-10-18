@@ -3,13 +3,13 @@ import insta from '../../Assets/insta.png'
 import twitter from '../../Assets/twitter.png'
 import linkedin from '../../Assets/linkedin.png'
 
-function Contact() {
+function Contact({size}) {
     return(
-        <div class="container_contact">
+        <div class="container_contact" >
             <div class="contact_title">
                 Contact us
             </div>
-            <div class="contacts">
+            <div class="contacts" style={{flexDirection: size ==='small' ? 'column' : 'row'}}>
                 <div>
                     <div class="direct">
                         <div class="direct_title">
