@@ -1,8 +1,12 @@
+import Box from '@mui/material/Box';
+import PetsitterCard from './PetsitterCard';
+
 function Petsitter(){
     return(
-        <h1>
-            Petsitter
-        </h1>
+        <Box sx={{ width: '100%', m: '2rem' }}>
+            <h1>Our Petsitters</h1>
+            <PetsitterCard></PetsitterCard>
+        </Box>
     )
 }
 
