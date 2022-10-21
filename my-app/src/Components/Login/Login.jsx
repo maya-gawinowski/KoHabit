@@ -63,6 +63,7 @@ export default function Login() {
     console.log("Email : " + emailRegister);
     console.log("Password : " + pwdRegister);
     console.log("PasswordBis : " + pwdBisConnection);
+    const [msg, setMsg] = useState('');
     try {
       await axios.post('http://localhost:5000/users', {
         name: nameConnection,
@@ -70,12 +71,12 @@ export default function Login() {
         password: pwdRegister,
         confPassword: pwdBisConnection
       });
-      console.log("suce")
       history.push("/");
       console.log("success");
     } catch (error) {
       if (error.response) {
-        console.log("error");
+        console.log("this : error");
+        setMsg(error.response.data.msg);
       }
     }
   }
