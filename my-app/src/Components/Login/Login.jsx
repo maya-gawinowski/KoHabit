@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import './Login.css';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -52,7 +51,7 @@ export default function Login() {
   const [pwdBisConnection, setPwdBisConnection] = useState();
   const [emailRegister, setEmailRegister] = useState();
   const [pwdRegister, setPwdRegister] = useState();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -70,7 +69,7 @@ export default function Login() {
         password: pwdRegister,
         confPassword: pwdBisConnection
       });
-      history.push("/");
+      navigate('/')
       console.log("success");
     } catch (error) {
       if (error.response) {
@@ -89,7 +88,8 @@ export default function Login() {
         password: pwdConnection
       });
       console.log("logged");
-      history.push("/");
+      navigate('/')
+      console.log("naviguated");
     } catch (error) {
       if (error.response) {
         console.log("error login");
