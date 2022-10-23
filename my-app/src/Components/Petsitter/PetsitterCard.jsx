@@ -9,19 +9,19 @@ const petsitters=[
         id: 1,
         name: 'Maya',
         city: 'Fontainebleau',
-        animalpref: 'Cat' 
+        animalpref: 'Cat'
     },
     {
         id: 1,
         name: 'Camille',
         city: 'Melun',
-        animalpref: 'Cat' 
+        animalpref: 'Cat'
     },
     {
         id: 1,
         name: 'Nicolas',
         city: 'Paris',
-        animalpref: 'Dog' 
+        animalpref: 'Dog'
     }
 ]
 
@@ -32,7 +32,7 @@ function PetsitterCard(){
         //here fetch the data to put into the cards
     }
 
-    function askToGuard(event, id){
+    function askToPetsit(event, id){
         //add the demand to the user linked to this id
     }
 
@@ -45,7 +45,7 @@ function PetsitterCard(){
         <Box>
             <div>
                 <label>
-                    City Name 
+                    City Name
                     <input type="text" name="nameConnection" onChange={(e) => setCityName(e.target.value)} required/>
                 </label>
                 <button onClick={handleSubmitCitySearch}>
@@ -66,7 +66,7 @@ function PetsitterCard(){
                             <h3>Animal preferences : {data.animalpref}</h3>
                         </Box>
                     </Box>
-                    <button onClick={event => askToGuard(event, data.id)}>Ask to guard</button>
+                    <button onClick={event => askToPetsit(event, data.id)}>Ask to petsit</button>
                 </Box>
             ))}
         </Box>

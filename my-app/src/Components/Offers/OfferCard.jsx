@@ -4,12 +4,12 @@ import Box from '@mui/material/Box';
 import defaultpic from '../../Assets/defaultpicture.png';
 
 
-const posts=[
+const offers=[
     {
         id: 1,
         name: 'Maya',
         city: 'Fontainebleau',
-        animalpref: 'Cat', 
+        animalpref: 'Cat',
         dateStart: '06/12/2022',
         dateEnd: '12/12/2022'
     },
@@ -19,7 +19,7 @@ const posts=[
         city: 'Melun',
         animalpref: 'Cat',
         dateStart: '06/11/2022',
-        dateEnd: '12/12/2022' 
+        dateEnd: '12/12/2022'
     },
     {
         id: 1,
@@ -31,14 +31,14 @@ const posts=[
     }
 ]
 
-function PetsitterCard(){
+function OfferCard(){
     const [cityname, setCityName] = useState();
 
     function getData(){
         //here fetch the data to put into the cards
     }
 
-    function askToGuard(event, id){
+    function askToPetsit(event, id){
         //add the demand to the user linked to this id
     }
 
@@ -51,14 +51,14 @@ function PetsitterCard(){
         <Box>
             <div>
                 <label>
-                    City Name 
+                    City Name
                     <input type="text" name="nameConnection" onChange={(e) => setCityName(e.target.value)} required/>
                 </label>
                 <button onClick={handleSubmitCitySearch}>
                     Search
                 </button>
             </div>
-            {posts.map((data,i) => (
+            {offers.map((data,i) => (
                 <Box sx={{boxShadow: 3, margin: '50px'}}>
                     <Box sx={{display: 'flex', flexDirection: 'row' }}>
                         <Box>
@@ -74,11 +74,11 @@ function PetsitterCard(){
                             <h3>To : {data.dateEnd}</h3>
                         </Box>
                     </Box>
-                    <button onClick={event => askToGuard(event, data.id)}>Ask to guard</button>
+                    <button onClick={event => askToPetsit(event, data.id)}>Ask to petsit</button>
                 </Box>
             ))}
         </Box>
     )
 }
 
-export default PetsitterCard;
+export default OfferCard;

@@ -12,14 +12,14 @@ function Card(){
     function loadUserDetails() {
         //get data from database
         //setUsername
-        //setUseremail    
+        //setUseremail
     }
 
 
 
     return(
         <Box>
-            <h1 >Mon compte</h1>
+            <h1 >My account</h1>
             <Box sx={{display: 'flex', flexDirection: 'row' }}>
                 <Box>
                     <div>
@@ -33,7 +33,7 @@ function Card(){
                     <ChangePassword></ChangePassword>
                 </Box>
             </Box>
-            
+
         </Box>
     )
 }
