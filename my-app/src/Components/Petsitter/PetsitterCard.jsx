@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useState } from "react";
 import Box from '@mui/material/Box';
 import defaultpic from '../../Assets/defaultpicture.png';
+import './PetsitterCard.css'
 
 
 const petsitters=[
@@ -25,8 +25,7 @@ const petsitters=[
     }
 ]
 
-function PetsitterCard(){
-    const [cityname, setCityName] = useState();
+function PetsitterCard({size}){
 
     function getData(){
         //here fetch the data to put into the cards
@@ -36,37 +35,35 @@ function PetsitterCard(){
         //add the demand to the user linked to this id
     }
 
-    function handleSubmitCitySearch(value){
-        //select all petsitters from this city
-        //display them
-    }
-
     return(
-        <Box>
-            <div>
-                <label>
-                    City Name 
-                    <input type="text" name="nameConnection" onChange={(e) => setCityName(e.target.value)} required/>
-                </label>
-                <button onClick={handleSubmitCitySearch}>
-                    Search
-                </button>
-            </div>
+        <Box sx={{
+        
+        }}>
             {petsitters.map((data,i) => (
-                <Box sx={{boxShadow: 3, margin: '50px'}}>
-                    <Box sx={{display: 'flex', flexDirection: 'row' }}>
+                <Box sx={{
+                    boxShadow : 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px' ,
+                    borderRadius :'15px',
+                    margin: '3em auto',
+                    display: 'flex',
+                    flexDirection : 'column',
+                    width: size ==='small' ? '300px' : '60vw'
+                    }}>
+                    <Box sx={{display: 'flex', flexDirection: size ==='small' ? 'column' : 'row'}}>
                         <Box>
                             <div>
                                 <img style={{ width: 200}} src={defaultpic} />
                             </div>
                         </Box>
-                        <Box sx={{marginLeft: '20px'}}>
+                        <Box sx={{
+                            marginLeft: '20px',
+                                                        
+                        }}>
                             <h3>Name : {data.name}</h3>
                             <h3>City : {data.city}</h3>
                             <h3>Animal preferences : {data.animalpref}</h3>
                         </Box>
                     </Box>
-                    <button onClick={event => askToGuard(event, data.id)}>Ask to guard</button>
+                    <button className='petsitter-contact' onClick={event => askToGuard(event, data.id)}>Ask to guard</button>
                 </Box>
             ))}
         </Box>
