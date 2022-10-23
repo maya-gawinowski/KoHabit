@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import defaultpicture from '../../Assets/defaultpicture.png'
+import './Panel.css'
+import Popup from 'reactjs-popup';
 
 const offers=[
   {
@@ -122,8 +124,29 @@ function Panel() {
                 <Tab label="My requests" {...a11yProps(3)} />
                 </Tabs>
             </Box>
-            <TabPanel value={value} index={0} style={{textAlign: 'left'}}>
+            <TabPanel value={value} index={0} style={{textAlign: 'center'}}>
                 <div>
+                    <Popup
+                        trigger={<button type='submit' className='panel-button'>Add offer</button>}
+                        modal
+                    >
+                        {close => (
+                            <div className="modal">
+                                <button className="close" onClick={close}>
+                                    &times;
+                                </button>
+                                <div className="header">
+                                    <span>Add a new petsitting offer</span></div>
+                                <form className="new-item">
+                                    <input name="category" placeholder="category" ></input>
+                                    <input name="city" placeholder="city" ></input>
+                                    <input name="keyword" placeholder="keyword" ></input>
+                                    <input name="userId" placeholder="userId" ></input>
+                                    <button type="button" className='panel-button'>Submit</button>
+                                </form>
+                            </div>
+                        )}
+                    </Popup>
                   {offers.map((data,i) => (
                     <Box sx={{display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px' }}>
                       <Box>
@@ -146,6 +169,27 @@ function Panel() {
             </TabPanel>
             <TabPanel value={value} index={1} style={{textAlign: 'center'}}>
                 <div>
+                    <Popup
+                        trigger={<button type='submit' className='panel-button'>Add animal</button>}
+                        modal
+                    >
+                        {close => (
+                            <div className="modal">
+                                <button className="close" onClick={close}>
+                                    &times;
+                                </button>
+                                <div className="header">
+                                    <span>Add a new animal</span></div>
+                                <form className="new-item">
+                                    <input name="category" placeholder="category" ></input>
+                                    <input name="city" placeholder="city" ></input>
+                                    <input name="keyword" placeholder="keyword" ></input>
+                                    <input name="userId" placeholder="userId" ></input>
+                                    <button type="button" className='panel-button'>Submit</button>
+                                </form>
+                            </div>
+                        )}
+                    </Popup>
                     {animals.map((data,i) => (
                         <Box sx={{display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px' }}>
                             <Box>
