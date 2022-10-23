@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box';
-import PostCard from './PostCard';
+import OfferCard from './OfferCard';
 import fond from '../../Assets/pets_background.jpg'
 import { useState } from "react";
-import './Posts.css'
+import './Offers.css'
 
-function Posts() {
+function Offers() {
     const [cityname, setCityName] = useState();
 
     function handleSubmitCitySearch(value){
@@ -19,15 +19,15 @@ function Posts() {
             <div className='post-search-zone'>
                 <label>City Name </label>
                 <input type="text" name="nameConnection" onChange={(e) => setCityName(e.target.value)} required/>
-                
+
                 <button onClick={handleSubmitCitySearch}>
                     Search
                 </button>
                 </div>
-            <PostCard></PostCard>
+            <OfferCard></OfferCard>
         </Box>
     )
-    
+
 }
 
-export default Posts;
+export default Offers;

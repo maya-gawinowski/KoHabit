@@ -1,10 +1,10 @@
-.post-title{
+.offer-title{
     text-align: center;
     font-size: 2em;
     font-weight: bold;
 }
 
-.post-contact{
+.offer-contact{
     background-color: white;
     border: solid #8dc0df 2px;
     border-radius: 20px;
@@ -14,12 +14,12 @@
     margin: 1em auto;
 }
 
-.post-contact:hover{
+.offer-contact:hover{
     border: solid #8dc0df 2px;
     color: #8dc0df;
 }
 
-.post-search-zone{
+.offer-search-zone{
     text-align: center;
     margin: 2em auto;
     font-size: 1.5em;
@@ -27,16 +27,16 @@
     flex-direction: column;
 }
 
-.post-search-zone input{
+.offer-search-zone input{
     width: 10vw;
     min-width: 100px;
     min-height: 30px;
     margin: 1em auto;
 }
 
-.post-search-zone button{
+.offer-search-zone button{
     padding:0.5em;
-    
+
     background-color: white;
     border: solid #8dc0df 2px;
     border-radius: 20px;
@@ -47,7 +47,7 @@
     margin: 1em auto;
 }
 
-.post-search-zone button:hover{
+.offer-search-zone button:hover{
     border: solid #8dc0df 2px;
     color: #8dc0df;
 }

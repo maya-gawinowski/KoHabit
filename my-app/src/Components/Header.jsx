@@ -19,23 +19,23 @@ function Header(){
                 <div className="container-button">
 
                     <Link to="/petsitter" class="nav-button">
-                        Our petsitters
+                        Petsitters
                     </Link>
 
-                    <Link to="/Posts" class="nav-button">
-                        Posts
+                    <Link to="/Offers" class="nav-button">
+                        Offers
                     </Link>
 
                     <Link to="/account" class="nav-button">
                         Account
                     </Link>
 
-                    
+
 
                 </div>
 
-               
-            
+
+
             </header>
         </div>
     )

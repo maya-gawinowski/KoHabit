@@ -6,51 +6,51 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import defaultpicture from '../../Assets/defaultpicture.png'
 
-const notice=[
+const offers=[
   {
-    title: 'Guarde de chat',
+    title: 'Petsitting your cat',
     date_start:'2021-03-12',
     date_end:'2021-06-12',
     location:'Paris',
     animal:'Cat'
   }
-] 
-    
-const guards=[
+]
+
+const keepings=[
       {
         date_start:'2021-03-12',
         date_end:'2021-06-12',
         location:'Paris',
-        guardianID:1
+        sitterID:1
       },
       {
         date_start:'2021-03-12',
         date_end:'2021-06-12',
         location:'Paris',
-        guardianID:1
+        sitterID:1
       }
     ]
 
-const demands=[
+const requests=[
       {
         id: 1,
-        status: 'to guard',
+        status: 'To petsit',
         date_start:'2021-03-12',
         date_end:'2021-06-12',
         location:'Paris',
       },
       {
         id: 2,
-        status: 'to be guarded',
+        status: 'To keep your animal',
         date_start:'2021-03-12',
         date_end:'2021-06-12',
         location:'Paris',
-      }   
+      }
 ]
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-  
+
     return (
       <div
         role="tabpanel"
@@ -73,7 +73,7 @@ function TabPanel(props) {
     index: PropTypes.number.isRequired,
     value: PropTypes.number.isRequired,
   };
-  
+
   function a11yProps(index) {
     return {
       id: `simple-tab-${index}`,
@@ -89,9 +89,9 @@ function Panel() {
     };
 
     const acceptDemand = (event, id, status) => {
-      // update database 
+      // update database
       // -> delete from demands
-      // -> add to notice or guards based on the status
+      // -> add to offers or keepings based on the status
       // reload page
     }
 
@@ -105,14 +105,14 @@ function Panel() {
         <Box>
             <Box sx={{borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                <Tab label="Mes annonces" {...a11yProps(0)} />
-                <Tab label="Mes gardes" {...a11yProps(1)} />
-                <Tab label="Mes demandes" {...a11yProps(2)} />
+                <Tab label="My offers" {...a11yProps(0)} />
+                <Tab label="My keepings" {...a11yProps(1)} />
+                <Tab label="My requests" {...a11yProps(2)} />
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0} style={{textAlign: 'left'}}>
                 <div>
-                  {notice.map((data,i) => (
+                  {offers.map((data,i) => (
                     <Box sx={{display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px' }}>
                       <Box>
                       <div>
@@ -134,7 +134,7 @@ function Panel() {
             </TabPanel>
             <TabPanel value={value} index={1} style={{textAlign: 'center'}}>
                 <div>
-                  {guards.map((data,i) => (
+                  {keepings.map((data,i) => (
                     <Box sx={{display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px' }}>
                       <Box>
                       <div>
@@ -146,7 +146,7 @@ function Panel() {
                           <li>In {data.location}</li>
                           <li>Start date {data.date_start}</li>
                           <li>End date {data.date_end}</li>
-                          <li>With {data.guardianID}</li>
+                          <li>With {data.sitterID}</li>
                         </ul>
                       </Box>
                     </Box>
@@ -155,7 +155,7 @@ function Panel() {
             </TabPanel>
             <TabPanel value={value} index={2} style={{textAlign: 'center'}}>
             <div>
-                  {demands.map((data,i) => (
+                  {requests.map((data,i) => (
                     <Box sx={{boxShadow: 3, textAlign: 'left'}}>
                       <Box sx={{display: 'flex', flexDirection: 'row', margin: '10px' }}>
                         <Box>
@@ -177,8 +177,8 @@ function Panel() {
                         <button class="modify" onClick={event => dismissDemand(event,data.id)}>dismiss</button>
                       </Box>
                     </Box>
-                    
-                    
+
+
                   ))}
                 </div>
             </TabPanel>
