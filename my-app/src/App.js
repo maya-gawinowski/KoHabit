@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home.jsx'
 import Petsitter from './Components/Petsitter/Petsitter.jsx'
 import Header from "./Components/Header";
-import Offers from "./Components/Offers/Offers";
+import Animals from "./Components/Animals/Animals";
 import Account from "./Components/Account/Account";
 import Login from "./Components/Login/Login"
 import Footer from "./Components/Footer";
@@ -51,7 +51,7 @@ function App() {
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Petsitter" element={<Petsitter />} />
-              <Route path="/Offers" element={<Offers />} />
+              <Route path="/Animals" element={<Animals />} />
               <Route path="/Account" element={<Account />} />
               <Route path="/Login" element={<Login />}/>
           </Routes>

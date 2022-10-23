@@ -8,8 +8,8 @@ function Header(){
     console.log(pathname);
 
     return(
-        <div className="header" style={{ 
-            position : pathname ==='/' ? 'absolute' : 'relative',            
+        <div className="header" style={{
+            position : pathname ==='/' ? 'absolute' : 'relative',
         }}>
             <header className="App-header">
                 <Link to="/" class="logo-button" alt="Logo Ko'habit">
@@ -22,8 +22,8 @@ function Header(){
                         Petsitters
                     </Link>
 
-                    <Link to="/Offers" class="nav-button">
-                        Offers
+                    <Link to="/Animals" class="nav-button">
+                        Animals
                     </Link>
 
                     <Link to="/account" class="nav-button">
