@@ -5,7 +5,7 @@ import Petsitter from './Components/Petsitter/Petsitter.jsx'
 import Header from "./Components/Header";
 import Animals from "./Components/Animals/Animals";
 import Account from "./Components/Account/Account";
-import Access from "./Components/Login/Access"
+import Access from "./Components/Access/Access"
 import Footer from "./Components/Footer";
 
 
