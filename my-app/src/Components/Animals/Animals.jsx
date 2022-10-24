@@ -15,24 +15,6 @@ function Animals() {
         //display them
     }
 
-    // const navigate = useNavigate();
-    // const axiosJWT = axios.create();
-    // const [token, setToken] = useState('');
-    // const [posts, setPosts] = useState([]);
-
-    // useEffect(() => {
-    //     getPosts();
-    // }, []);
-
-    // const getPosts = async () => {
-    //     const response = await axiosJWT.get('http://localhost:5000/posts', {
-    //         headers: {
-    //             Authorization: `Bearer ${token}`
-    //         }
-    //     });
-    //     setPosts(response.data);
-    // }
-
     return(
         <Box sx={{ width: '90%', m: '0 auto', display : 'flex', flexDirection : 'column'}}>
             <div className='animal-title'>What cute pet are you choosing ?</div>
