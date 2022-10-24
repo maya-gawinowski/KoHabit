@@ -45,6 +45,6 @@
 }
 
 .petsitter-contact:hover{
-    border: solid #8dc0df 2px;
-    color: #8dc0df;
+    background-color: #8dc0df;
+    color: white;
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import './Animals.css';
 import Box from '@mui/material/Box';
 import defaultpic from '../../Assets/defaultpicture.png';
 
@@ -76,14 +76,22 @@ function AnimalCard(){
             flexWrap: 'wrap'
             }}>
             {animals.map((data,i) => (
-                <Box sx={{
+                <Box sx={[
+                    {
                     boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px',
                     margin : '2em auto',
                     width : '25vw',
                     display: 'flex',
                     flexDirection : 'column',
-                    borderRadius : '15px'
-                }}>
+                    borderRadius : '15px',
+                        transition: 'transform .2s'
+                    },
+                    {
+                        '&:hover': {
+                            transform: 'scale(1.05)'
+                        }
+                    }
+                ]}>
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
