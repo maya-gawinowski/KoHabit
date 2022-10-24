@@ -1,8 +1,11 @@
+import '../index.css'
+
 function Footer(){
     return(
-        <h1>
-            Footer
-        </h1>
+        <div className="footer">
+            <div className="footer-title">©kohabit</div>
+            <p>Website created by Maximilien B, Théo C, Nicolas C. & Maya G. in 2022</p>
+        </div>
     )
 }
 

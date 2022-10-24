@@ -1,0 +1,46 @@
+.container_contact{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 20px;
+    width: 60vw;
+    height: auto;
+    margin : 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_title{
+    padding: 1em;
+    font-size: x-large;
+    font-weight: bold;
+    margin : 0 auto;
+}
+
+.contacts{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin : 2em auto;
+}
+
+.direct{
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+}
+
+.direct_title{
+    font-weight: bold;
+    margin-right: 5px;
+    
+}
+
+.socials{
+    display: flex;
+    flex-direction: row;
+}
+
+.social{
+    height: 50px;
+    width: auto;
+    margin: 1em 2em;
+}

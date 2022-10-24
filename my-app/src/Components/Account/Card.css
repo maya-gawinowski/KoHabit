@@ -1,0 +1,11 @@
+.modify{
+    margin-right: 10px;
+    justify-content: space-evenly;
+    padding:1em;
+    background-color: white;
+    border: solid #8dc0df 2px;
+    border-radius: 20px;
+    min-width: 7vw;
+    margin-bottom: 2em;
+    font-size: large;
+} 

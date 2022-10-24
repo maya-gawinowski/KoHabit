@@ -1,0 +1,82 @@
+.modify{
+    margin-right: 10px;
+    justify-content: space-evenly;
+    padding:1em;
+    background-color: white;
+    border: solid #8dc0df 2px;
+    border-radius: 20px;
+    min-width: 7vw;
+    margin-bottom: 2em;
+    font-size: large;
+}
+
+.panel-button{
+    background-color: white;
+    border: solid #8dc0df 2px;
+    border-radius: 20px;
+    min-width: 100px;
+    font-size: medium;
+    width: auto;
+    margin : 10px auto;
+    padding: 0.5em;
+}
+
+.panel-button:hover{
+    border: solid #8dc0df 2px;
+    background-color: #8dc0df;
+    color: white;
+}
+
+.modal {
+    background-color: white;
+    border: solid #8dc0df 2px;
+    height: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 16px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: auto;
+    padding: 2em;
+    width: 80%;
+}
+
+.modal > .header {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.modal > .content {
+    padding : 1em;
+    font-size: 15px;
+    width: 100%;
+}
+
+.modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+}
+
+.new-item{
+    display: flex;
+    flex-direction: column;
+    margin : 1em 0;
+    width: 100%;
+}
+
+.new-item input{
+    width: 80%;
+    margin : 10px auto;
+    padding: 0.5em;
+}
