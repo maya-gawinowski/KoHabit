@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box';
-import PostCard from './PostCard';
+import AnimalCard from './AnimalCard';
 import fond from '../../Assets/pets_background.jpg'
 import { useState } from "react";
-import './Posts.css'
+import './Animals.css'
 
-function Posts() {
+function Animals() {
     const [cityname, setCityName] = useState();
 
     function handleSubmitCitySearch(value){
@@ -14,20 +14,20 @@ function Posts() {
 
     return(
         <Box sx={{ width: '90%', m: '0 auto', display : 'flex', flexDirection : 'column'}}>
-            <div className='post-title'>What cute pet are you choosing ?</div>
+            <div className='animal-title'>What cute pet are you choosing ?</div>
             <img className='pet-picture' src={fond} alt="petsitter img" />
-            <div className='post-search-zone'>
+            <div className='animal-search-zone'>
                 <label>City Name </label>
                 <input type="text" name="nameConnection" onChange={(e) => setCityName(e.target.value)} required/>
-                
+
                 <button onClick={handleSubmitCitySearch}>
                     Search
                 </button>
                 </div>
-            <PostCard></PostCard>
+            <AnimalCard></AnimalCard>
         </Box>
     )
-    
+
 }
 
-export default Posts;
+export default Animals;

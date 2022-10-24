@@ -4,12 +4,12 @@ import Box from '@mui/material/Box';
 import defaultpic from '../../Assets/defaultpicture.png';
 
 
-const posts=[
+const animals=[
     {
         id: 1,
         name: 'Maya',
         city: 'Fontainebleau',
-        animalpref: 'Cat', 
+        animalpref: 'Cat',
         dateStart: '06/12/2022',
         dateEnd: '12/12/2022'
     },
@@ -19,7 +19,7 @@ const posts=[
         city: 'Melun',
         animalpref: 'Cat',
         dateStart: '06/11/2022',
-        dateEnd: '12/12/2022' 
+        dateEnd: '12/12/2022'
     },
     {
         id: 1,
@@ -58,36 +58,34 @@ const posts=[
     }
 ]
 
-function PetsitterCard(){
-    
+function AnimalCard(){
+
 
     function getData(){
         //here fetch the data to put into the cards
     }
 
-    function askToGuard(event, id){
+    function askToPetsit(event, id){
         //add the demand to the user linked to this id
     }
 
-    
-
     return(
         <Box sx={{
-            display: 'flex', 
+            display: 'flex',
             flexDirection: 'row',
             flexWrap: 'wrap'
             }}>
-            {posts.map((data,i) => (
+            {animals.map((data,i) => (
                 <Box sx={{
                     boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px',
                     margin : '2em auto',
                     width : '25vw',
                     display: 'flex',
                     flexDirection : 'column',
-                    borderRadius : '15px'                
+                    borderRadius : '15px'
                 }}>
                     <Box sx={{
-                        display: 'flex', 
+                        display: 'flex',
                         flexDirection: 'column',
                         textAlign : 'center',
                         mt : '1em'
@@ -108,11 +106,11 @@ function PetsitterCard(){
                             <h3>To : {data.dateEnd}</h3>
                         </Box>
                     </Box>
-                    <button className='post-contact' onClick={event => askToGuard(event, data.id)}>Ask to guard</button>
+                    <button className='animal-contact' onClick={event => askToPetsit(event, data.id)}>Ask to petsit</button>
                 </Box>
             ))}
         </Box>
     )
 }
 
-export default PetsitterCard;
+export default AnimalCard;

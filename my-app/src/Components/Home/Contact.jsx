@@ -13,7 +13,7 @@ function Contact({size}) {
                 <div>
                     <div class="direct">
                         <div class="direct_title">
-                            Mail adress : 
+                            Email:
                         </div>
                         <div>
                             kohabit@fakeadress.com
@@ -21,7 +21,7 @@ function Contact({size}) {
                     </div>
                     <div class="direct">
                         <div class="direct_title">
-                            Phone number :
+                            Phone:
                         </div>
                         <div>
                             +33 1 23 45 67 89
