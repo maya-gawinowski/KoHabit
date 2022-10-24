@@ -38,7 +38,7 @@ function Account() {
             setExpire(decoded.exp);
         } catch (error) {
             if (error.response) {
-                navigate('/access')
+                navigate('/Access')
             }
         }
     }
