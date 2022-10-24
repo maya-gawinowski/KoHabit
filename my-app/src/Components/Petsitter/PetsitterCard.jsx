@@ -45,6 +45,7 @@ function PetsitterCard({size}){
                     borderRadius :'15px',
                     margin: '3em auto',
                     display: 'flex',
+                    textAlign: 'center',
                     flexDirection : 'column',
                     width: size ==='small' ? '300px' : '60vw'
                     }}>
