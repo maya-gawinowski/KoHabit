@@ -8,6 +8,12 @@
     min-width: 7vw;
     margin-bottom: 2em;
     font-size: large;
+    transition: 0.3s;
+}
+
+.modify:hover {
+    background-color: #8dc0df;
+    color: white;
 }
 
 .panel-button{

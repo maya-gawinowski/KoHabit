@@ -33,7 +33,8 @@
 }
 
 .selection_button:hover {
-    color: #8dc0df;
+    background-color: #8dc0df;
+    color: white;
 }
 
 .form{

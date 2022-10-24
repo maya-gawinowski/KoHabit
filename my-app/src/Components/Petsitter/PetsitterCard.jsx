@@ -37,18 +37,27 @@ function PetsitterCard({size}){
 
     return(
         <Box sx={{
-        
+
         }}>
             {petsitters.map((data,i) => (
-                <Box sx={{
+                <Box sx={[
+                    {
                     boxShadow : 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px' ,
                     borderRadius :'15px',
                     margin: '3em auto',
                     display: 'flex',
                     textAlign: 'center',
                     flexDirection : 'column',
-                    width: size ==='small' ? '300px' : '60vw'
-                    }}>
+                    width: size ==='small' ? '300px' : '60vw',
+                        transition: 'transform .2s'
+                    },
+                    {
+                        '&:hover': {
+                            transform: 'scale(1.05)'
+                        },
+                    }
+                    ]
+                }>
                     <Box sx={{display: 'flex', flexDirection: size ==='small' ? 'column' : 'row'}}>
                         <Box>
                             <div>
@@ -57,7 +66,7 @@ function PetsitterCard({size}){
                         </Box>
                         <Box sx={{
                             marginLeft: '20px',
-                                                        
+
                         }}>
                             <h3>Name : {data.name}</h3>
                             <h3>City : {data.city}</h3>

@@ -17,3 +17,8 @@
     justify-content: space-evenly;
 }
 
+.search-zone button:hover{
+    background-color: #8dc0df;
+    color: white;
+}
+
