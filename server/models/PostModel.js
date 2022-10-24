@@ -7,17 +7,23 @@ const Post = db.define('posts',{
     typ:{
         type: DataTypes.STRING
     },
-    zip:{
-        type: DataTypes.INTEGER
+    name:{
+        type : DataTypes.STRING
     },
-    date:{
-        type: DataTypes.DATETIME
+    dateFrom:{
+        type: DataTypes.DATE
+    },
+    dateTo:{
+        type: DataTypes.DATE
     },
     animal:{
         type: DataTypes.STRING
     },
     userID:{
         type : DataTypes.INTEGER
+    },
+    city:{
+        type : DataTypes.STRING
     }
 },{
     freezeTableName:true
@@ -27,4 +33,4 @@ const Post = db.define('posts',{
     await db.sync();
 })();
 
-export default Posts;
+export default Post;

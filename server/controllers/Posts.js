@@ -1,11 +1,11 @@
-import Posts from "../models/PostModel.js";
+import Post from "../models/PostModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 export const getPosts = async(req, res) => {
     try {
-        const posts = await Posts.findAll({
-            attributes:['id','typ','animal', 'userID']
+        const posts = await Post.findAll({
+            attributes:['id','typ','animal', 'dateFrom', 'dateTo', 'city', 'name']
         });
         res.json(posts);
     } catch (error) {

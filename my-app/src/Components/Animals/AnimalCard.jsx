@@ -2,6 +2,9 @@ import * as React from 'react';
 import './Animals.css';
 import Box from '@mui/material/Box';
 import defaultpic from '../../Assets/defaultpicture.png';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
 
 
 const animals=[
@@ -60,7 +63,25 @@ const animals=[
 
 function AnimalCard(){
 
+    const navigate = useNavigate();
+    const axiosJWT = axios.create();
+    const [token, setToken] = useState('');
+    const [posts, setPosts] = useState([]);
 
+    useEffect(() => {
+        getPosts();
+    }, []);
+
+    const getPosts = async () => {
+        const response = await axiosJWT.get('http://localhost:5000/posts', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        setPosts(response.data);
+    }
+    
+    
     function getData(){
         //here fetch the data to put into the cards
     }
@@ -69,13 +90,15 @@ function AnimalCard(){
         //add the demand to the user linked to this id
     }
 
+    
+    
     return(
         <Box sx={{
             display: 'flex',
             flexDirection: 'row',
             flexWrap: 'wrap'
             }}>
-            {animals.map((data,i) => (
+            {posts.map((data,i) => (
                 <Box sx={[
                     {
                     boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px',
