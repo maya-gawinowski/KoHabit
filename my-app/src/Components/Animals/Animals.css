@@ -12,6 +12,7 @@
     font-size: large;
     width: 8vw;
     margin: 1em auto;
+    transition: 0.3s;
 }
 
 .animal-contact:hover{
@@ -45,6 +46,7 @@
     font-size: large;
     width: 8vw;
     margin: 1em auto;
+    transition: 0.3s;
 }
 
 .animal-search-zone button:hover{
