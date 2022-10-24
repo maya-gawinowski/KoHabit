@@ -54,4 +54,5 @@
 
 .pet-picture{
     margin: 2em auto ;
+    max-width: 80vw;
 }

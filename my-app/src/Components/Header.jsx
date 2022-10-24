@@ -9,7 +9,7 @@ function Header(){
 
     return(
         <div className="header" style={{ 
-            position : pathname ==='/' ? 'absolute' : 'relative',            
+            position : pathname ==='/' ? 'absolute' : 'relative',        
         }}>
             <header className="App-header">
                 <Link to="/" class="logo-button" alt="Logo Ko'habit">
