@@ -6,6 +6,8 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import './Login.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 function TabPanel(props) {
@@ -49,72 +51,102 @@ export default function Login() {
   const [pwdBisConnection, setPwdBisConnection] = useState();
   const [emailRegister, setEmailRegister] = useState();
   const [pwdRegister, setPwdRegister] = useState();
+  const navigate = useNavigate();
+  
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  function handleSubmitConnection () {
-    console.log("Name : "+nameConnection);
-    console.log("Email : "+emailConnection);
-    console.log("Password : "+pwdConnection);
-    console.log("PasswordBis : "+pwdBisConnection);
+  async function HandleSubmitRegister() {
+    console.log("Name : " + nameConnection);
+    console.log("Email : " + emailRegister);
+    console.log("Password : " + pwdRegister);
+    console.log("PasswordBis : " + pwdBisConnection);
+    try {
+      await axios.post('http://localhost:5000/users', {
+        name: nameConnection,
+        email: emailRegister,
+        password: pwdRegister,
+        confPassword: pwdBisConnection
+      });
+      navigate('/')
+      console.log("success");
+    } catch (error) {
+      if (error.response) {
+        console.log("this : error");
+      }
+    }
   }
 
-  function handleSubmitRegister () {
-    console.log("Email : "+emailRegister);
-    console.log("Password : "+pwdRegister);
+  async function handleSubmitConnection() {
+    console.log("Email : " + emailConnection);
+    console.log("Password : " + pwdConnection);
+
+    try {
+      await axios.post('http://localhost:5000/login', {
+        email: emailConnection,
+        password: pwdConnection
+      });
+      console.log("logged");
+      navigate('/')
+      console.log("naviguated");
+    } catch (error) {
+      if (error.response) {
+        console.log("error login");
+      }
+    }
   }
 
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Connexion" {...a11yProps(0)} />
-          <Tab label="Inscription" {...a11yProps(1)} />
+          <Tab label="Inscription" {...a11yProps(0)} />
+          <Tab label="Connexion" {...a11yProps(1)} />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0} style={{textAlign: 'center'}}>
-        <Typography variant='h3'>Connexion</Typography>
+      <TabPanel value={value} index={0} style={{ textAlign: 'center' }}>
+        <Typography variant='h3'>Inscription</Typography>
         <div class='form'>
-            <label>
-                Name <br />
-                <input type="text" name="nameConnection" onChange={(e) => setNameConnection(e.target.value)} required/>
-            </label><br />
-            <label>
-                Email <br />
-                <input type="text" name="emailConnection" onChange={(e) => setEmailConnection(e.target.value)} required/>
-            </label><br />
-            <label>
-                Password <br />
-                <input type="text" name="pwdConnection" onChange={(e) => setPwdConnection(e.target.value)} required/>
-            </label><br />
-            <label>
-                Confirm your password <br />
-                <input type="text" name="pwdBisConnection" onChange={(e) => setPwdBisConnection(e.target.value)} required/>
-            </label><br />
-            <button class="button_form" onClick={handleSubmitConnection}>
-                Validate
-            </button>
+          <label>
+            Name <br />
+            <input type="text" name="nameConnection" onChange={(e) => setNameConnection(e.target.value)} required />
+          </label><br />
+          <label>
+            Email <br />
+            <input type="text" name="emailRegister" onChange={(e) => setEmailRegister(e.target.value)} required />
+          </label><br />
+          <label>
+            Password <br />
+            <input type="text" name="pwdRegister" onChange={(e) => setPwdRegister(e.target.value)} required />
+          </label><br />
+          <label>
+            Confirm your password <br />
+            <input type="text" name="pwdBisConnection" onChange={(e) => setPwdBisConnection(e.target.value)} required />
+          </label><br />
+          <button class="button_form" onClick={HandleSubmitRegister}>
+            Validate
+          </button>
         </div>
       </TabPanel>
-      <TabPanel value={value} index={1} style={{textAlign: 'center'}}>
-        <Typography variant='h3'>Register</Typography>
+      <TabPanel value={value} index={1} style={{ textAlign: 'center' }}>
+        <Typography variant='h3'>Connexion</Typography>
         <div class='form'>
-            <label>
-                Email <br />
-                <input type="text" name="emailRegister" onChange={(e) => setEmailRegister(e.target.value)} required/>
-            </label><br />
-            <label>
-                Password <br />
-                <input type="text" name="pwdRegister" onChange={(e) => setPwdRegister(e.target.value)} required/>
-            </label><br />
-            <button class="button_form" onClick={handleSubmitRegister}>
-                Validate
-            </button>
+          <label>
+            Email <br />
+            <input type="text" name="emailConnection" onChange={(e) => setEmailConnection(e.target.value)} required />
+          </label><br />
+          <label>
+            Password <br />
+            <input type="text" name="pwdConnection" onChange={(e) => setPwdConnection(e.target.value)} required />
+          </label><br />
+          <button class="button_form" onClick={handleSubmitConnection}>
+            Validate
+          </button>
         </div>
 
-        </TabPanel>
+      </TabPanel>
     </Box>
   );
 }

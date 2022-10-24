@@ -6,3 +6,4 @@
 .idea/vcs.xml
 .idea/workspace.xml
 my-app/package-lock.json
+node_modules
