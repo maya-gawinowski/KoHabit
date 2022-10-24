@@ -132,9 +132,9 @@ function AnimalCard(){
                             }}>
                             <h3>Name : {data.name}</h3>
                             <h3>City : {data.city}</h3>
-                            <h3>Kind of pet : {data.animalpref}</h3>
-                            <h3>From : {data.dateStart}</h3>
-                            <h3>To : {data.dateEnd}</h3>
+                            <h3>Kind of pet : {data.animal}</h3>
+                            <h3>From : {data.dateFrom.slice(0,10)}</h3>
+                            <h3>To : {data.dateTo.slice(0,10)}</h3>
                         </Box>
                     </Box>
                     <button className='animal-contact' onClick={event => askToPetsit(event, data.id)}>Ask to petsit</button>
