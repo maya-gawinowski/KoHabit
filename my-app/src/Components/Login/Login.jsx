@@ -44,11 +44,11 @@ export default function Login() {
         <div class='form'>
           <label>
             Email <br />
-            <input type="text" name="emailConnection" onChange={(e) => setEmailConnection(e.target.value)} required />
+            <input type="text" name="emailConnection" value={emailConnection} onChange={(e) => setEmailConnection(e.target.value)} required />
           </label><br />
           <label>
             Password <br />
-            <input type="text" name="pwdConnection" onChange={(e) => setPwdConnection(e.target.value)} required />
+            <input type="text" name="pwdConnection" value={pwdConnection} onChange={(e) => setPwdConnection(e.target.value)} required />
           </label><br />
           <button class="button_form" onClick={handleSubmitConnection}>
             Validate

@@ -1,8 +1,5 @@
 import * as React from 'react';
 import { useState } from "react";
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import './Login.css';
@@ -12,8 +9,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [value, setValue] = React.useState(0);
-  const [nameConnection, setNameConnection] = useState();
-  const [pwdBisConnection, setPwdBisConnection] = useState();
+  const [nameRegister, setNameRegister] = useState();
+  const [pwdBisRegister, setPwdBisRegister] = useState();
   const [emailRegister, setEmailRegister] = useState();
   const [pwdRegister, setPwdRegister] = useState();
   const navigate = useNavigate();
@@ -24,16 +21,16 @@ export default function Login() {
   };
 
   async function HandleSubmitRegister() {
-    console.log("Name : " + nameConnection);
+    console.log("Name : " + nameRegister);
     console.log("Email : " + emailRegister);
     console.log("Password : " + pwdRegister);
-    console.log("PasswordBis : " + pwdBisConnection);
+    console.log("PasswordBis : " + pwdBisRegister);
     try {
       await axios.post('http://localhost:5000/users', {
-        name: nameConnection,
+        name: nameRegister,
         email: emailRegister,
         password: pwdRegister,
-        confPassword: pwdBisConnection
+        confPassword: pwdBisRegister
       });
       navigate('/')
       console.log("success");
@@ -51,19 +48,19 @@ export default function Login() {
         <div class='form'>
           <label>
             Name <br />
-            <input type="text" name="nameConnection" onChange={(e) => setNameConnection(e.target.value)} required />
+            <input type="text" name="nameConnection" value={nameRegister} onChange={(e) => setNameRegister(e.target.value)} required />
           </label><br />
           <label>
             Email <br />
-            <input type="text" name="emailRegister" onChange={(e) => setEmailRegister(e.target.value)} required />
+            <input type="text" name="emailRegister" value={emailRegister} onChange={(e) => setEmailRegister(e.target.value)} required />
           </label><br />
           <label>
             Password <br />
-            <input type="text" name="pwdRegister" onChange={(e) => setPwdRegister(e.target.value)} required />
+            <input type="text" name="pwdRegister" value={pwdRegister} onChange={(e) => setPwdRegister(e.target.value)} required />
           </label><br />
           <label>
             Confirm your password <br />
-            <input type="text" name="pwdBisConnection" onChange={(e) => setPwdBisConnection(e.target.value)} required />
+            <input type="text" name="pwdBisConnection" value={pwdBisRegister} onChange={(e) => setPwdBisRegister(e.target.value)} required />
           </label><br />
           <button class="button_form" onClick={HandleSubmitRegister}>
             Validate
