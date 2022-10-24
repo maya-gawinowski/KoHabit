@@ -5,7 +5,7 @@ import Petsitter from './Components/Petsitter/Petsitter.jsx'
 import Header from "./Components/Header";
 import Animals from "./Components/Animals/Animals";
 import Account from "./Components/Account/Account";
-import Login from "./Components/Login/Login"
+import Access from "./Components/Login/Access"
 import Footer from "./Components/Footer";
 
 
@@ -53,7 +53,7 @@ function App() {
               <Route path="/Petsitter" element={<Petsitter />} />
               <Route path="/Animals" element={<Animals />} />
               <Route path="/Account" element={<Account />} />
-              <Route path="/Login" element={<Login />}/>
+              <Route path="/Access" element={<Access />}/>
           </Routes>
       </BrowserRouter>
         <Footer />
