@@ -15,7 +15,7 @@
 
 .search-zone button{
     padding:0.5em;
-    
+
     background-color: white;
     border: solid #8dc0df 2px;
     border-radius: 20px;
@@ -24,6 +24,7 @@
     font-size: large;
     width: 8vw;
     margin: 1em auto;
+    transition: 0.3s;
 }
 
 .search-zone button:hover{
@@ -40,6 +41,7 @@
     font-size: large;
     width: 8vw;
     margin: 1em auto;
+    transition: 0.3s;
 }
 
 .petsitter-contact:hover{

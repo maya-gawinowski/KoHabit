@@ -4,6 +4,8 @@ import pp from '../../Assets/pp.png';
 import './Card.css'
 import ChangeEmail from './ChangeEmail';
 import ChangePassword from './ChangePassword';
+import Logout from './Logout';
+import {createTheme, ThemeProvider} from "@mui/material";
 
 function Card(){
     const [username, setUsername] = useState(undefined);
@@ -14,8 +16,6 @@ function Card(){
         //setUsername
         //setUseremail
     }
-
-
 
     return(
         <Box>
@@ -30,10 +30,10 @@ function Card(){
                     <h3>{username}</h3>
                     <h3>{useremail}</h3>
                     <ChangeEmail></ChangeEmail> <br />
-                    <ChangePassword></ChangePassword>
+                    <ChangePassword></ChangePassword> <br />
+                    <Logout></Logout>
                 </Box>
             </Box>
-
         </Box>
     )
 }

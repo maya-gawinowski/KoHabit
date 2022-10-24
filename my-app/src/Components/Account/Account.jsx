@@ -7,6 +7,15 @@ import axios from 'axios';
 import jwt_decode from "jwt-decode";
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react'
+import {createTheme, ThemeProvider} from "@mui/material";
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#578BA8'
+            }
+        }
+});
 
 function Account() {
     const [name, setName] = useState('');
@@ -58,12 +67,14 @@ function Account() {
             }
         });
     }
-    
+
     return(
         <Box sx={{ width: '100%', m: '2rem' }}>
-            <Card></Card>
-            <br /><br />
-            <Panel></Panel>
+            <ThemeProvider theme={theme}>
+                <Card></Card>
+                <br /><br />
+                <Panel></Panel>
+            </ThemeProvider>
         </Box>
     )
 }
