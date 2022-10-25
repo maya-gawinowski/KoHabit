@@ -20,21 +20,31 @@ export default function Login() {
     console.log("Email : " + emailRegister);
     console.log("Password : " + pwdRegister);
     console.log("PasswordBis : " + pwdBisRegister);
-    try {
-      await axios.post('http://localhost:5000/users', {
-        name: nameRegister,
-        email: emailRegister,
-        password: pwdRegister,
-        confPassword: pwdBisRegister
-      });
-      navigate('/')
-      console.log("success");
-    } catch (error) {
-      if (error.response) {
-        console.log("this : error");
-      }
-    }
+    if(nameRegister !=='' && emailRegister!== '' && pwdRegister!=='' && pwdBisRegister!==''){
+      if(pwdRegister === pwdBisRegister){
+        try {
+          await axios.post('http://localhost:5000/users', {
+            name: nameRegister,
+            email: emailRegister,
+            password: pwdRegister,
+            confPassword: pwdBisRegister
+          });
+          navigate('/')
+          console.log("success");
+        } catch (error) {
+          if (error.response) {
+            console.log("this : error");
+          }
+        }
+      }else{
+        console.log("error password not the same");
+        alert("Password error, not the same");
+      }  
+    
+  }else{
+    alert("Please fill the form in its entierety");
   }
+}
 
 
   return (
@@ -50,19 +60,19 @@ export default function Login() {
         <div class='form'>
           <label>
             Name <br />
-            <input type="text" name="nameConnection" value={nameRegister} onChange={(e) => setNameRegister(e.target.value)} required />
+            <input type="text" name="nameRegister" value={nameRegister} onChange={(e) => setNameRegister(e.target.value)} required />
           </label><br />
           <label>
             Email <br />
-            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="emailRegister" value={emailRegister} onChange={(e) => setEmailRegister(e.target.value)} required />
+            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="emailRegister" value={emailRegister} onChange={(e) => setEmailRegister(e.target.value)} required/>
           </label><br />
           <label>
             Password <br />
-            <input type="password" name="pwdRegister" value={pwdRegister} onChange={(e) => setPwdRegister(e.target.value)} required />
+            <input type="password"  name="pwdRegister" value={pwdRegister} onChange={(e) => setPwdRegister(e.target.value)} required />
           </label><br />
           <label>
             Confirm your password <br />
-            <input type="password" name="pwdBisConnection" value={pwdBisRegister} onChange={(e) => setPwdBisRegister(e.target.value)} required />
+            <input type="password"  name="pwdBisRegister" value={pwdBisRegister} onChange={(e) => setPwdBisRegister(e.target.value)} required />
           </label><br />
           <button class="button_form" onClick={HandleSubmitRegister}>
             Validate
