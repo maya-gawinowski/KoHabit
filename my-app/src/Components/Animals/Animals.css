@@ -12,6 +12,7 @@
     font-size: large;
     width: 8vw;
     margin: 1em auto;
+    transition: 0.3s;
 }
 
 .animal-contact:hover{
@@ -45,11 +46,12 @@
     font-size: large;
     width: 8vw;
     margin: 1em auto;
+    transition: 0.3s;
 }
 
-.animal-search-zone button:hover{
-    border: solid #8dc0df 2px;
-    color: #8dc0df;
+.animal-search-zone button:hover, .animal-contact:hover{
+    background-color: #8dc0df;
+    color: white;
 }
 
 .pet-picture{

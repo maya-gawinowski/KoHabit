@@ -2,7 +2,10 @@ import Box from '@mui/material/Box';
 import AnimalCard from './AnimalCard';
 import fond from '../../Assets/pets_background.jpg'
 import { useState } from "react";
-import './Animals.css'
+import './Animals.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
 function Animals() {
     const [cityname, setCityName] = useState();

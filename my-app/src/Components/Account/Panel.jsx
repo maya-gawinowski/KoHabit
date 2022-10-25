@@ -148,7 +148,16 @@ function Panel() {
                         )}
                     </Popup>
                   {offers.map((data,i) => (
-                    <Box sx={{display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px' }}>
+                      <Box sx={[
+                          {
+                              display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px', transition: 'transform .2s'
+                          },
+                          {
+                              '&:hover': {
+                                  transform: 'scale(1.05)'
+                              },
+                          }
+                      ]}>
                       <Box>
                       <div>
                         <img style={{ width: 200}} src={defaultpicture} />
@@ -191,7 +200,16 @@ function Panel() {
                         )}
                     </Popup>
                     {animals.map((data,i) => (
-                        <Box sx={{display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px' }}>
+                        <Box sx={[
+                            {
+                                display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px', transition: 'transform .2s'
+                            },
+                            {
+                                '&:hover': {
+                                    transform: 'scale(1.05)'
+                                },
+                            }
+                        ]}>
                             <Box>
                                 <div>
                                     <img style={{ width: 200}} src={defaultpicture} />
@@ -213,7 +231,16 @@ function Panel() {
             <TabPanel value={value} index={2} style={{textAlign: 'center'}}>
                 <div>
                   {keepings.map((data,i) => (
-                    <Box sx={{display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px' }}>
+                      <Box sx={[
+                          {
+                              display: 'flex', flexDirection: 'row', boxShadow: 3, margin: '10px', transition: 'transform .2s'
+                          },
+                          {
+                              '&:hover': {
+                                  transform: 'scale(1.05)'
+                              },
+                          }
+                      ]}>
                       <Box>
                       <div>
                         <img style={{ width: 200}} src={defaultpicture} />
@@ -234,7 +261,16 @@ function Panel() {
             <TabPanel value={value} index={3} style={{textAlign: 'center'}}>
             <div>
                   {requests.map((data,i) => (
-                    <Box sx={{boxShadow: 3, textAlign: 'left'}}>
+                    <Box sx={[
+                        {
+                        boxShadow: 3, textAlign: 'left', transition: 'transform .2s'
+                    },
+                        {
+                            '&:hover': {
+                                transform: 'scale(1.05)'
+                            },
+                        }
+                    ]}>
                       <Box sx={{display: 'flex', flexDirection: 'row', margin: '10px' }}>
                         <Box>
                         <div>
@@ -251,8 +287,8 @@ function Panel() {
                         </Box>
                       </Box>
                       <Box>
-                        <button class="modify" onClick={event => acceptDemand(event,data.id, data.status)}>accept</button>
-                        <button class="modify" onClick={event => dismissDemand(event,data.id)}>dismiss</button>
+                        <button class="modify" onClick={event => acceptDemand(event,data.id, data.status)}>Accept</button>
+                        <button class="modify" onClick={event => dismissDemand(event,data.id)}>Dismiss</button>
                       </Box>
                     </Box>
 
