@@ -43,7 +43,7 @@ export default function Login() {
         <div class='form'>
           <label>
             Email <br />
-            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="emailConnection" value={emailConnection} onChange={(e) => setEmailConnection(e.target.value)} required />
+            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="emailConnection" value={emailConnection} onChange={(e) => setEmailConnection(e.target.value)} />
           </label><br />
           <label>
             Password <br />
